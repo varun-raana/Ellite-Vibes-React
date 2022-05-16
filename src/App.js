@@ -25,18 +25,14 @@ function App() {
           <Route path="/">
             {/* Home Route */}
             <Route index element={<Home />} />
-
             {/* Elite Vibes Route */}
             <Route path="elitevibes">
               <Route index element={<EliteVibes />} />
             </Route>
-
             {/* About Page Route */}
             <Route path="aboutUs" element={<About />} />
-
             {/* Contact Page Route */}
             <Route path="contact" element={<Contact />} />
-
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
