@@ -70,6 +70,18 @@ function Navbar() {
                   </a>
                 </li>
               )}
+              {params.pathname === "/elitevibes" && (
+                <li>
+                  <a
+                    href="#upcoming"
+                    className="inline-flex text-white 
+                focus:border-pink-600 active:border-pink-600
+                active:text-pink-600 hover:text-pink-500 text-xs transition-all
+                duration-100 p-8 w-full">
+                    Upcoming
+                  </a>
+                </li>
+              )}
               {params.pathname === "/" ? null : (
                 <li className="w-full">
                   <button
@@ -195,6 +207,18 @@ function Navbar() {
                 </a>
               </li>
             )}
+            {params.pathname === "/elitevibes" && (
+              <li>
+                <a
+                  href="#upcoming"
+                  className="inline-flex text-white 
+                focus:border-pink-600 active:border-pink-600
+                active:text-pink-600 hover:text-pink-500 text-xs transition-all
+                duration-100 p-8 w-full">
+                  Upcoming
+                </a>
+              </li>
+            )}
             {params.pathname === "/" ? null : (
               <li>
                 <button
@@ -229,13 +253,15 @@ function Navbar() {
                           </Link>
                         </li>
                       )}
-                      <li className="w-full">
-                        <Link
-                          to="/elitegames"
-                          className="block text-sm text-gray-300 p-4 w-full hover:backdrop-blur-lg bg-transparent hover:text-white">
-                          Elite Games
-                        </Link>
-                      </li>
+                      {params.pathname === "elitegames" ? null : (
+                        <li className="w-full">
+                          <Link
+                            to="/elitegames"
+                            className="block text-sm text-gray-300 p-4 w-full hover:backdrop-blur-lg bg-transparent hover:text-white">
+                            Elite Games
+                          </Link>
+                        </li>
+                      )}
                       <li className="w-full">
                         <Link
                           to="/elitedivine"

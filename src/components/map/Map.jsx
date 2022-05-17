@@ -3,7 +3,7 @@ import React from "react";
 function Map() {
   return (
     <div className="map relative">
-      <div className="absolute bg-black top-0 left-0 h-full w-full bg-blend-multiply bg-opacity-40  pointer-events-none"></div>
+      <div className="absolute bg-gray-900  top-0 left-0 h-full w-full bg-blend-multiply bg-opacity-40  pointer-events-none"></div>
       <iframe
         className=" h-[350px] w-full"
         title="Corporate address"

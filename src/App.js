@@ -10,6 +10,7 @@ import Home from "./pages/home/Home";
 import "react-toastify/dist/ReactToastify.css";
 import "./style.css";
 import NotFound from "./pages/404/NotFound";
+import Single from "./pages/eliteVibes/single/Single";
 
 function App() {
   const [top, setTop] = useState(false);
@@ -25,14 +26,25 @@ function App() {
           <Route path="/">
             {/* Home Route */}
             <Route index element={<Home />} />
+
             {/* Elite Vibes Route */}
             <Route path="elitevibes">
               <Route index element={<EliteVibes />} />
+              <Route path=":id" element={<Single />} />
             </Route>
+
+            {/* Elite Games Route */}
+            {/* <Route path="elitegames">
+              <Route index element={<EliteGames />} />
+            </Route> */}
+
             {/* About Page Route */}
             <Route path="aboutUs" element={<About />} />
+
             {/* Contact Page Route */}
             <Route path="contact" element={<Contact />} />
+
+            {/* Not Found Route */}
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

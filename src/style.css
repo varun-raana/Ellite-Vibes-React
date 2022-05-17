@@ -7,7 +7,8 @@
 }
 
 /* subscriber styling */
-.subscribe {
+.subscribe,
+.upcoming {
   background: url("./img/subscribe.jpg") no-repeat center center/cover;
   background-attachment: fixed;
   height: 100%;
@@ -58,5 +59,14 @@
   background: url("./img/event_img1.jpg") no-repeat center center/cover,
     rgba(0, 0, 37, 0.749);
   background-blend-mode: multiply;
+  background-attachment: fixed;
+}
+
+.figure:last-of-type {
+  flex-direction: row-reverse;
+}
+
+.events {
+  background: url("./img/footer.jpg") no-repeat center center/cover;
   background-attachment: fixed;
 }

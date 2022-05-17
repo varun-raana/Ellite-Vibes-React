@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 // Import Swiper React components
@@ -16,44 +16,43 @@ import { Autoplay } from "swiper";
 function SocialSwiper() {
   const [event, setEvent] = useState([]);
   const [gameEvent, setGameEvent] = useState([]);
-  const isMounted = useRef(true);
-  let headers = new Headers();
-  headers.append("Access-Control-Allow-Origin", "http://localhost:3000");
+  // let headers = new Headers();
+  // headers.append("Access-Control-Allow-Origin", "*");
 
   let URL = "https://elite-backend-1.herokuapp.com/api/events";
   let game_URL = "https://elite-backend-1.herokuapp.com/api/gameEvents";
 
   useEffect(() => {
     const showEvents = async () => {
-      const res = await fetch(URL, { headers: headers });
+      const res = await fetch(URL);
       const data = await res.json();
       const result = data.data;
 
       const singleEvent = result.splice(0, 1);
 
-      if (res.status === 200) {
-        setEvent(singleEvent);
+      if (res.status === 200 && result) {
+        setTimeout(() => {
+          setEvent(singleEvent);
+        }, 1500);
       }
     };
 
     const showGameEvents = async () => {
-      const response = await fetch(game_URL, { headers: headers });
+      const response = await fetch(game_URL);
       const gameData = await response.json();
       const gameResult = gameData.data;
 
-      const singleEvent = gameResult.splice(0, 1);
+      const singleGameEvent = gameResult.splice(0, 1);
 
-      if (response.status === 200) {
-        setGameEvent(singleEvent);
+      if (response.status === 200 && gameResult) {
+        setTimeout(() => {
+          setGameEvent(singleGameEvent);
+        }, 1500);
       }
     };
 
     showEvents();
     showGameEvents();
-
-    return () => {
-      isMounted.current = false;
-    };
   }, [URL, game_URL]);
 
   return (
