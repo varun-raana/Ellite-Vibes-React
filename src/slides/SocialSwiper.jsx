@@ -17,35 +17,34 @@ function SocialSwiper() {
   const [event, setEvent] = useState([]);
   const [gameEvent, setGameEvent] = useState([]);
   const isMounted = useRef(true);
+  let headers = new Headers();
+  headers.append("Access-Control-Allow-Origin", "http://localhost:3000");
 
   let URL = "https://elite-backend-1.herokuapp.com/api/events";
   let game_URL = "https://elite-backend-1.herokuapp.com/api/gameEvents";
 
   useEffect(() => {
     const showEvents = async () => {
-      const res = await fetch(URL);
+      const res = await fetch(URL, { headers: headers });
       const data = await res.json();
       const result = data.data;
 
       const singleEvent = result.splice(0, 1);
 
       if (res.status === 200) {
-        setTimeout(() => {
-          setEvent(singleEvent);
-        }, 1000);
+        setEvent(singleEvent);
       }
     };
+
     const showGameEvents = async () => {
-      const response = await fetch(game_URL);
+      const response = await fetch(game_URL, { headers: headers });
       const gameData = await response.json();
       const gameResult = gameData.data;
 
       const singleEvent = gameResult.splice(0, 1);
 
       if (response.status === 200) {
-        setTimeout(() => {
-          setGameEvent(singleEvent);
-        }, 1000);
+        setGameEvent(singleEvent);
       }
     };
 
@@ -55,7 +54,7 @@ function SocialSwiper() {
     return () => {
       isMounted.current = false;
     };
-  }, [URL, game_URL, isMounted]);
+  }, [URL, game_URL]);
 
   return (
     <>
