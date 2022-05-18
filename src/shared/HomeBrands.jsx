@@ -8,8 +8,8 @@ import eliteGold from "../elitedata/gaming gold.jpg";
 function HomeBrands() {
   return (
     <>
-      <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-4 md:py-8 md:px-5 px-3 items-center justify-center">
-        <div className="h-full w-full ">
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-4 md:py-8 md:px-5 px-10 items-center justify-center">
+        <div className="h-full w-full md:hover:-translate-y-2 transition-all duration-300 ease-in">
           <Link to={"/elitevibes"}>
             <img
               src={eliteVibe}
@@ -19,7 +19,7 @@ function HomeBrands() {
             />
           </Link>
         </div>
-        <div className="h-full w-full">
+        <div className="h-full w-full md:hover:-translate-y-2 transition-all duration-300 ease-in">
           <Link to={"/elitegames"}>
             <img
               src={eliteGame}
@@ -29,7 +29,7 @@ function HomeBrands() {
             />
           </Link>
         </div>
-        <div className="h-full w-full">
+        <div className="h-full w-full md:hover:-translate-y-2 transition-all duration-300 ease-in">
           <Link to={"/elitedivine"}>
             <img
               src={eliteDivine}
@@ -39,7 +39,7 @@ function HomeBrands() {
             />
           </Link>
         </div>
-        <div className="h-full  overflow-hidden  w-full">
+        <div className="h-full  overflow-hidden  w-full md:hover:-translate-y-2 transition-all duration-300 ease-in">
           <Link to={"/elitegold"}>
             <img
               src={eliteGold}

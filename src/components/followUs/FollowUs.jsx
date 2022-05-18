@@ -8,7 +8,7 @@ function FollowUs() {
           href="https://www.facebook.com/EliteVibes-104309855303145"
           target="_blank"
           rel="noreferrer"
-          className=" text-gray-300 tracking-[2px] font-[700] p-2 ">
+          className=" text-pink-600 tracking-[2px] font-[700] p-2 ">
           Facebook
         </a>
         <span className=" text-white">|</span>
@@ -16,7 +16,7 @@ function FollowUs() {
           href={"https://www.instagram.com/elitevibesevent"}
           target="_blank"
           rel="noreferrer"
-          className=" text-gray-300 tracking-[2px] font-[700] p-2 ">
+          className=" text-pink-600 tracking-[2px] font-[700] p-2 ">
           Instagram
         </a>
       </div>

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import FooterTwo from "./components/footer/FooterTwo";
 import MainFooter from "./components/footer/MainFooter";
 import About from "./pages/about/About";
 import Contact from "./pages/contact/Contact";
@@ -49,7 +48,6 @@ function App() {
           </Route>
         </Routes>
         <MainFooter />
-        <FooterTwo />
         <button
           className={`fixed bottom-10 right-10 text-white z-20 border h-10 w-10 rounded-full inline-block items-center justify-center focus:outline-none active:scale-95`}
           onClick={() => setTop(gotTop)}>
