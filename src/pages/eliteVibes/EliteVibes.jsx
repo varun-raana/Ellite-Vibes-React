@@ -6,7 +6,7 @@ import Gallery from "../../shared/Gallery";
 
 function EliteVibes() {
   return (
-    <>
+    <div>
       <Navbar />
       <EliteVibesHeader />
       <div className="upcoming py-24 md:px-0 px-5 uppercase flex items-center justify-center md:text-4xl text-3xl tracking-widest font-[700] text-white">
@@ -25,10 +25,10 @@ function EliteVibes() {
           <Gallery />
         </div>
       </div>
-      <div className="bg-gray-900 py-24 px-4 testimonial">
+      <div className="bg-gray-900 py-24 px-4 testimonial" id="testimonials">
         <VibesTestimonials />
       </div>
-    </>
+    </div>
   );
 }
 

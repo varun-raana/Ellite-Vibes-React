@@ -136,6 +136,15 @@ function Navbar() {
                   )}
                 </li>
               )}
+              {params.pathname === "/elitevibes" && (
+                <li className="w-full">
+                  <a
+                    href="#testimonials"
+                    className="inline-flex text-white rounded-md  focus:bg-pink-600  focus:text-white  text-xs hover:bg-pink-700 transition-all duration-100 p-8 w-full">
+                    testimonials
+                  </a>
+                </li>
+              )}
               {params.pathname === "/" && (
                 <li className="w-full">
                   <NavLink

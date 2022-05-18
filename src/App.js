@@ -20,7 +20,7 @@ function App() {
   }
 
   return (
-    <>
+    <div className=" scroll-smooth">
       <BrowserRouter>
         <Routes>
           <Route path="/">
@@ -35,7 +35,7 @@ function App() {
 
             {/* Elite Games Route */}
             {/* <Route path="elitegames">
-              <Route index element={<EliteGames />} />
+              <Route index element={<About />} />
             </Route> */}
 
             {/* About Page Route */}
@@ -57,7 +57,7 @@ function App() {
         </button>
       </BrowserRouter>
       <ToastContainer />
-    </>
+    </div>
   );
 }
 
