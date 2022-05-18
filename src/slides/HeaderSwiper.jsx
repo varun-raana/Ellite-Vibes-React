@@ -27,29 +27,29 @@ function HeaderSwiper() {
           clickable: true,
         }}
         modules={[Autoplay, Pagination, EffectFade]}
-        className="mySwiper h-screen ">
-        <SwiperSlide className="flex items-center justify-center bg-cover bg-center">
+        className="mySwiper md:h-screen h-[750px] w-full object-cover overflow-hidden">
+        <SwiperSlide className="flex items-center justify-center bg-cover bg-center h-full w-full overflow-hidden">
           <img
             className="block h-full w-full object-cover"
             src={social}
             alt="eventImage"
           />
         </SwiperSlide>
-        <SwiperSlide className="flex items-center justify-center bg-cover bg-center">
+        <SwiperSlide className="flex items-center justify-center bg-cover bg-center h-full w-full overflow-hidden">
           <img
             className="block h-full w-full object-cover"
             src={footer}
             alt="eventImage"
           />
         </SwiperSlide>
-        <SwiperSlide className="flex items-center justify-center bg-cover bg-center">
+        <SwiperSlide className="flex items-center justify-center bg-cover bg-center h-full w-full overflow-hidden">
           <img
             className="block h-full w-full object-cover"
             src={dancingPeople}
             alt="eventImage"
           />
         </SwiperSlide>
-        <SwiperSlide className="flex items-center justify-center bg-cover bg-center">
+        <SwiperSlide className="flex items-center justify-center bg-cover bg-center h-full w-full overflow-hidden">
           <img
             className="block h-full w-full object-cover"
             src={footer2}

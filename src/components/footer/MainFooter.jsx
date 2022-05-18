@@ -31,30 +31,38 @@ function MainFooter() {
               our other brands
             </div>
             <div className="bg-gray-800 bg-opacity-30 rounded-lg flex md:flex-row lg:py-0 py-2 flex-col ">
-              <Link
-                to="elitevibes"
-                className=" tracking-[2px] capitalize text-gray-400 hover:text-pink-600 transition-all md:text-base text-sm  overflow-hidden duration-700 ease-in-out py-2 px-3 font-[700] "
-                title="Elite Vibes">
-                elite vibes
-              </Link>
-              <Link
-                to="elitegames"
-                className=" tracking-[2px] capitalize text-gray-400 hover:text-pink-600 transition-all md:text-base text-sm  overflow-hidden duration-700 ease-in-out py-2 px-3 font-[700] "
-                title="Elite Games">
-                elite games
-              </Link>
-              <Link
-                to="elitedivine"
-                className=" tracking-[2px] capitalize text-gray-400 hover:text-pink-600 transition-all md:text-base text-sm  overflow-hidden duration-700 ease-in-out py-2 px-3 font-[700] "
-                title="Elite Divine">
-                elite divine
-              </Link>
-              <Link
-                to="elitegold"
-                className=" tracking-[2px] capitalize text-gray-400 hover:text-pink-600 transition-all md:text-base text-sm  overflow-hidden duration-700 ease-in-out py-2 px-3 font-[700] "
-                title="Elite Gold">
-                elite gold
-              </Link>
+              {params.pathname === "/elitevibes" ? null : (
+                <Link
+                  to="elitevibes"
+                  className=" tracking-[2px] capitalize text-gray-400 hover:text-pink-600 transition-all md:text-base text-sm  overflow-hidden duration-700 ease-in-out py-2 px-3 font-[700] "
+                  title="Elite Vibes">
+                  elite vibes
+                </Link>
+              )}
+              {params.pathname === "/elitegames" ? null : (
+                <Link
+                  to="elitegames"
+                  className=" tracking-[2px] capitalize text-gray-400 hover:text-pink-600 transition-all md:text-base text-sm  overflow-hidden duration-700 ease-in-out py-2 px-3 font-[700] "
+                  title="Elite Games">
+                  elite games
+                </Link>
+              )}
+              {params.pathname === "elitedivine" ? null : (
+                <Link
+                  to="elitedivine"
+                  className=" tracking-[2px] capitalize text-gray-400 hover:text-pink-600 transition-all md:text-base text-sm  overflow-hidden duration-700 ease-in-out py-2 px-3 font-[700] "
+                  title="Elite Divine">
+                  elite divine
+                </Link>
+              )}
+              {params.pathname === "/elitegold" ? null : (
+                <Link
+                  to="elitegold"
+                  className=" tracking-[2px] capitalize text-gray-400 hover:text-pink-600 transition-all md:text-base text-sm  overflow-hidden duration-700 ease-in-out py-2 px-3 font-[700] "
+                  title="Elite Gold">
+                  elite gold
+                </Link>
+              )}
             </div>
           </div>
           <div className="flex flex-col md:items-center justify-center">

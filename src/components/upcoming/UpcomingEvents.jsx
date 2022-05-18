@@ -40,7 +40,9 @@ function UpcomingEvents() {
               <div className="flex flex-col items-center justify-center space-y-10 sm:pt-5 w-full h-auto p-5 backdrop-blur-md">
                 <div className="text-white">
                   <h3 className="text-base">
-                    {new Date(item.eventMonth).toDateString()}
+                    {new Date(item.eventMonth).toLocaleString("default", {
+                      dateStyle: "full",
+                    })}
                   </h3>
                 </div>
                 <div className="flex flex-col items-center justify-center flex-wrap">

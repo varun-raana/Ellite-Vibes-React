@@ -59,25 +59,19 @@ function Navbar() {
                 </NavLink>
               </li>
               {params.pathname === "/aboutUs" && (
-                <li>
+                <li className="w-full">
                   <a
                     href="#services"
-                    className="inline-flex text-white 
-                focus:border-pink-600 active:border-pink-600
-                active:text-pink-600 hover:text-pink-500 text-xs transition-all
-                duration-100 p-8 w-full">
+                    className="inline-flex text-white rounded-md  focus:bg-pink-600  focus:text-white  text-xs hover:bg-pink-700 transition-all duration-100 p-8 w-full">
                     Services
                   </a>
                 </li>
               )}
               {params.pathname === "/elitevibes" && (
-                <li>
+                <li className="w-full">
                   <a
                     href="#upcoming"
-                    className="inline-flex text-white 
-                focus:border-pink-600 active:border-pink-600
-                active:text-pink-600 hover:text-pink-500 text-xs transition-all
-                duration-100 p-8 w-full">
+                    className="inline-flex text-white rounded-md  focus:bg-pink-600  focus:text-white  text-xs hover:bg-pink-700 transition-all duration-100 p-8 w-full">
                     Upcoming
                   </a>
                 </li>
@@ -88,7 +82,7 @@ function Navbar() {
                     id="dropdownNavbarLink"
                     data-dropdown-toggle="dropdownNavbar"
                     onClick={() => setOpen(!open)}
-                    className="inline-flex font-medium border-0 hover:text-pink-500 uppercase text-xs relative justify-between items-center p-7 w-full text-white ">
+                    className="inline-flex text-white rounded-md  focus:bg-pink-600  focus:text-white  items-center justify-between hover:bg-pink-700 transition-all duration-100 p-8 w-full uppercase text-xs font-medium">
                     Brands
                     <svg
                       className="ml-1 w-4 h-4"
@@ -181,6 +175,8 @@ function Navbar() {
             </ul>
           </div>
         )}
+
+        {/* medium navbar */}
 
         <div
           className="hidden lg:border-hidden md:border-hidden items-center justify-center w-full md:inline-flex md:flex-grow md:w-auto"
@@ -279,6 +275,18 @@ function Navbar() {
                     </ul>
                   </div>
                 )}
+              </li>
+            )}
+            {params.pathname === "/elitevibes" && (
+              <li>
+                <a
+                  href="#testimonials"
+                  className="inline-flex text-white 
+                focus:border-pink-600 active:border-pink-600
+                active:text-pink-600 hover:text-pink-500 text-xs transition-all
+                duration-100 p-8 w-full">
+                  Testimonials
+                </a>
               </li>
             )}
             {params.pathname === "/" && (
