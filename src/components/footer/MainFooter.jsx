@@ -29,7 +29,7 @@ function MainFooter() {
             </div>
             <div className="flex flex-col md:items-center justify-center gap-4">
               <div className="text-gray-600 text-opacity-40 uppercase tracking-wider font-[900] md:text-3xl text-2xl">
-                our other brands
+                our {params.pathname === "/" ? null : " other"} brands
               </div>
               <div className="bg-gray-800 bg-opacity-30 rounded-lg flex md:flex-row lg:py-0 py-2 flex-col ">
                 {params.pathname === "/elitevibes" ? null : (
