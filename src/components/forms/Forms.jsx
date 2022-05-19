@@ -55,45 +55,47 @@ function Forms() {
   }, [URL]);
   return (
     <div>
-      <div className="md:max-w-2xl mx-auto bg-white bg-opacity-5 rounded-md backdrop-blur-lg">
+      <div className="md:max-w-xl mx-auto bg-white bg-opacity-5 rounded-md backdrop-blur-lg">
         <div className="mt-5 py-10  md:px-4">
           <div className="flex item-center justify-center text-center md:text-4xl text-2xl text-gray-400 capitalize w-full font-[800] tracking-wider">
             Feel Free To Tell Us
           </div>
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col gap-5 p-4 mt-5">
-              <div className="flex flex-col">
-                <label
-                  htmlFor="name"
-                  className=" tracking-wider text-white capitalize">
-                  name
-                </label>
-                <input
-                  type="text"
-                  ref={name}
-                  name="name"
-                  id="name"
-                  autoComplete="off"
-                  placeholder="enter your name"
-                  className=" block mt-1 py-2 px-4 bg-transparent border border-gray-400 rounded-md placeholder:text-gray-400 placeholder-shown:tracking-wider text-gray-300 focus:outline-none tracking-[2px] placeholder:capitalize "
-                  required
-                />
-              </div>
-              <div className="flex flex-col">
-                <label
-                  htmlFor="email"
-                  className=" tracking-wider text-white capitalize">
-                  email
-                </label>
-                <input
-                  type="email"
-                  ref={email}
-                  name="email"
-                  id="email"
-                  placeholder="enter your email"
-                  className=" block mt-1 py-2 px-4 bg-transparent border border-gray-400 rounded-md placeholder:text-gray-400 placeholder-shown:tracking-wider text-gray-300 focus:outline-none tracking-[2px] placeholder:capitalize"
-                  required
-                />
+              <div className="flex md:flex-row flex-col gap-4 items-center justify-center w-full">
+                <div className="flex flex-col w-full">
+                  <label
+                    htmlFor="name"
+                    className=" tracking-wider text-white capitalize">
+                    name
+                  </label>
+                  <input
+                    type="text"
+                    ref={name}
+                    name="name"
+                    id="name"
+                    autoComplete="off"
+                    placeholder="enter your name"
+                    className=" block focus:bg-black transition-all focus:bg-opacity-60  ease-in duration-200 mt-1 py-2 px-4 bg-transparent border border-gray-400 rounded-md placeholder:text-gray-400 placeholder-shown:tracking-wider text-gray-300 focus:outline-none tracking-[2px] placeholder:capitalize "
+                    required
+                  />
+                </div>
+                <div className="flex flex-col w-full">
+                  <label
+                    htmlFor="email"
+                    className=" tracking-wider text-white capitalize">
+                    email
+                  </label>
+                  <input
+                    type="email"
+                    ref={email}
+                    name="email"
+                    id="email"
+                    placeholder="enter your email"
+                    className=" block focus:bg-black transition-all focus:bg-opacity-60  ease-in duration-200 mt-1 py-2 px-4 bg-transparent border border-gray-400 rounded-md placeholder:text-gray-400 placeholder-shown:tracking-wider text-gray-300 focus:outline-none tracking-[2px] placeholder:capitalize"
+                    required
+                  />
+                </div>
               </div>
 
               <div className="flex flex-col">
@@ -108,7 +110,7 @@ function Forms() {
                   name="phoneNumber"
                   id="phoneNumber"
                   placeholder="enter your phone number"
-                  className=" block mt-1 py-2 px-4 bg-transparent border border-gray-400 rounded-md placeholder:text-gray-400 placeholder-shown:tracking-wider text-gray-300 focus:outline-none tracking-[2px] placeholder:capitalize "
+                  className=" block focus:bg-black transition-all focus:bg-opacity-60  ease-in duration-200 mt-1 py-2 px-4 bg-transparent border border-gray-400 rounded-md placeholder:text-gray-400 placeholder-shown:tracking-wider text-gray-300 focus:outline-none tracking-[2px] placeholder:capitalize "
                   required
                 />
               </div>
@@ -125,10 +127,10 @@ function Forms() {
                   rows="7"
                   cols="30"
                   placeholder="write your message"
-                  className=" block mt-1 py-2 px-4 bg-transparent border border-gray-400 rounded-md placeholder:text-gray-400 placeholder-shown:tracking-wider text-gray-300 focus:outline-none resize-y tracking-[2px] placeholder:capitalize"
+                  className=" block mt-1 py-2 px-4 bg-transparent border border-gray-400 rounded-md focus:bg-black transition-all focus:bg-opacity-60  ease-in duration-200 placeholder:text-gray-400 placeholder-shown:tracking-wider text-gray-300 focus:outline-none resize-y tracking-[2px] placeholder:capitalize"
                   required></textarea>
               </div>
-              <button className="mt-4 inline-block p-3 bg-pink-600 text-base capitalize font-[700] tracking-wider text-white rounded-md">
+              <button className="mt-4 inline-block w-full p-3 bg-pink-600 text-base capitalize font-[700] tracking-wider text-white rounded-md">
                 send
               </button>
             </div>

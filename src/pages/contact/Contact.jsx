@@ -7,9 +7,9 @@ function Contact() {
   return (
     <div>
       <Navbar />
-      <div className="h-20 bg-gray-900 bg-opacity-60"></div>
+      <div className="h-[11vh] bg-gray-900"></div>
       <Map />
-      <div className="form lg:p-5 p-3">
+      <div className="form py-24 p-3">
         <Forms />
       </div>
     </div>
