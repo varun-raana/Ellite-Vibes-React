@@ -10,9 +10,10 @@ import "react-toastify/dist/ReactToastify.css";
 import "./style.css";
 import NotFound from "./pages/404/NotFound";
 import Single from "./pages/eliteVibes/single/Single";
+import EliteGames from "./pages/eliteGames/EliteGames";
 
 function App() {
-  const [top, setTop] = useState(false);
+  const [tops, setTop] = useState(false);
 
   function gotTop() {
     setTop(window.scrollTo({ top: 0, behavior: "smooth" }));
@@ -33,9 +34,9 @@ function App() {
             </Route>
 
             {/* Elite Games Route */}
-            {/* <Route path="elitegames">
-              <Route index element={<About />} />
-            </Route> */}
+            <Route path="elitegames">
+              <Route index element={<EliteGames />} />
+            </Route>
 
             {/* About Page Route */}
             <Route path="aboutUs" element={<About />} />

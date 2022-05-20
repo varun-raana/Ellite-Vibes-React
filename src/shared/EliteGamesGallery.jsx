@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -8,11 +7,12 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Pagination, Autoplay } from "swiper";
+import { useEffect, useState } from "react";
 
-function Gallery() {
+function EliteGamesGallery() {
   const [images, setImages] = useState([]);
 
-  const URL = "https://elite-backend-1.herokuapp.com/api/events/";
+  const URL = "https://elite-backend-1.herokuapp.com/api/gameEvents/";
 
   useEffect(() => {
     const allImages = [];
@@ -73,4 +73,4 @@ function Gallery() {
   );
 }
 
-export default Gallery;
+export default EliteGamesGallery;

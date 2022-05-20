@@ -11,7 +11,11 @@ function Navbar() {
     <div>
       {/* <!-- ========================== NAVBAR =============================== --> */}
       <nav
-        className={`flex flex-wrap items-center py-1 px-3 bg-indigo-900 md:bg-opacity-20 bg-opacity-40 w-full fixed top-0 left-0 z-50 backdrop-blur-md`}>
+        className={`${
+          params.pathname === "/elitegames"
+            ? "flex flex-wrap items-center py-1 px-3 bg-white w-full fixed top-0 left-0 z-50"
+            : "flex flex-wrap items-center py-1 px-3 bg-indigo-900 md:bg-opacity-20 bg-opacity-40 w-full fixed top-0 left-0 z-50 backdrop-blur-md"
+        }  `}>
         {/* <!-- =========== LEFT SIDE =========== --> */}
         <div className="inline-flex items-center justify-center mr-4 px-3">
           <NavLink to={"/"}>
@@ -25,7 +29,9 @@ function Navbar() {
 
         {/* <!-- ============ BUTTON ========== --> */}
         <button
-          className="md:hidden  text-white inline-flex items-center justify-center p-2 ml-auto"
+          className={`md:hidden border-none outline-none ${
+            params.pathname === "/elitegames" ? "text-gray-600" : " text-white"
+          }  inline-flex items-center justify-center p-2 ml-auto`}
           data-target=" #navigation"
           onClick={() => setToggle(!toggle)}
           id="toggle">
@@ -53,7 +59,11 @@ function Navbar() {
             <ul className="flex flex-col flex-wrap items-center justify-center md:ml-auto uppercase w-full font-medium gap-3 py-3">
               <li className="w-full">
                 <NavLink
-                  className="inline-flex text-white rounded-md  focus:bg-pink-600  focus:text-white  text-xs hover:bg-pink-700 transition-all duration-100 p-8 w-full"
+                  className={`inline-flex ${
+                    params.pathname === "/elitegames"
+                      ? "text-black hover:text-blue-500"
+                      : "text-white focus:bg-pink-600  focus:text-white hover:bg-pink-700"
+                  } rounded-md  text-xs  transition-all duration-100 p-8 w-full`}
                   to="/">
                   Home
                 </NavLink>
@@ -76,13 +86,29 @@ function Navbar() {
                   </a>
                 </li>
               )}
+              {params.pathname === "/elitegames" && (
+                <li className="w-full">
+                  <a
+                    href="#upcoming"
+                    className="inline-flex text-black 
+                active:text-blue-600 hover:text-blue-500 text-xs transition-all
+                duration-100 p-8 w-full">
+                    Upcoming
+                  </a>
+                </li>
+              )}
+
               {params.pathname === "/" ? null : (
                 <li className="w-full">
                   <button
                     id="dropdownNavbarLink"
                     data-dropdown-toggle="dropdownNavbar"
                     onClick={() => setOpen(!open)}
-                    className="inline-flex text-white rounded-md  focus:bg-pink-600  focus:text-white  items-center justify-between hover:bg-pink-700 transition-all duration-100 p-8 w-full uppercase text-xs font-medium">
+                    className={`inline-flex text-white rounded-md ${
+                      params.pathname === "/elitegames"
+                        ? " text-black hover:text-blue-500"
+                        : "focus:bg-pink-600  focus:text-white hover:bg-pink-700"
+                    }    items-center justify-between  transition-all duration-100 p-8 w-full uppercase text-xs font-medium`}>
                     Brands
                     <svg
                       className="ml-1 w-4 h-4"
@@ -110,13 +136,15 @@ function Navbar() {
                             </Link>
                           </li>
                         )}
-                        <li className="w-full">
-                          <Link
-                            to="/elitegames"
-                            className="block text-sm text-gray-300 p-4 w-full hover:backdrop-blur-lg bg-transparent hover:text-white ">
-                            Elite Games
-                          </Link>
-                        </li>
+                        {params.pathname === "/elitegames" ? null : (
+                          <li className="w-full">
+                            <Link
+                              to="/elitegames"
+                              className="block text-sm text-gray-300 p-4 w-full hover:backdrop-blur-lg bg-transparent hover:text-white ">
+                              Elite Games
+                            </Link>
+                          </li>
+                        )}
                         <li className="w-full">
                           <Link
                             to="/elitedivine"
@@ -134,6 +162,17 @@ function Navbar() {
                       </ul>
                     </div>
                   )}
+                </li>
+              )}
+              {params.pathname === "/elitegames" && (
+                <li className="w-full">
+                  <a
+                    href="#testimonials"
+                    className="inline-flex text-black 
+                active:text-blue-600 hover:text-blue-500 text-xs transition-all
+                duration-100 p-8 w-full">
+                    Testimonials
+                  </a>
                 </li>
               )}
               {params.pathname === "/elitevibes" && (
@@ -176,7 +215,11 @@ function Navbar() {
                 <li className="w-full">
                   <NavLink
                     to="/contact"
-                    className="inline-flex text-white rounded-md  focus:bg-pink-600  focus:text-white  text-xs hover:bg-pink-700 transition-all duration-100 p-8 w-full">
+                    className={`inline-flex ${
+                      params.pathname === "/elitegames"
+                        ? " text-black hover:text-blue-500"
+                        : "focus:bg-pink-600  focus:text-white hover:bg-pink-700"
+                    } rounded-md text-xs transition-all duration-100 p-8 w-full`}>
                     Contact
                   </NavLink>
                 </li>
@@ -195,8 +238,10 @@ function Navbar() {
               <NavLink
                 to="/"
                 className={`inline-flex ${
-                  params.pathname === "/" ? "text-pink-600" : "text-white"
-                }  focus:border-pink-600 active:border-pink-600  hover:text-pink-300 text-xs transition-all duration-100 p-8 w-full`}>
+                  params.pathname === "/elitegames"
+                    ? "text-black hover:text-blue-500"
+                    : "text-white hover:text-pink-500"
+                }  text-xs transition-all duration-100 p-8 w-full`}>
                 Home
               </NavLink>
             </li>
@@ -224,13 +269,28 @@ function Navbar() {
                 </a>
               </li>
             )}
+            {params.pathname === "/elitegames" && (
+              <li>
+                <a
+                  href="#upcoming"
+                  className="inline-flex text-black 
+                active:text-blue-600 hover:text-blue-500 text-xs transition-all
+                duration-100 p-8 w-full">
+                  Upcoming
+                </a>
+              </li>
+            )}
             {params.pathname === "/" ? null : (
               <li>
                 <button
                   id="dropdownNavbarLink"
                   data-dropdown-toggle="dropdownNavbar"
                   onClick={() => setOpen(!open)}
-                  className="inline-flex font-medium border-0 hover:text-pink-500 uppercase text-xs relative justify-between items-center p-7 w-full text-white ">
+                  className={`inline-flex font-medium border-0 ${
+                    params.pathname === "/elitegames"
+                      ? "text-black hover:text-blue-500"
+                      : "text-white hover:text-pink-500"
+                  }  uppercase text-xs relative justify-between items-center p-7 w-full `}>
                   Brands
                   <svg
                     className="ml-1 w-4 h-4"
@@ -258,7 +318,7 @@ function Navbar() {
                           </Link>
                         </li>
                       )}
-                      {params.pathname === "elitegames" ? null : (
+                      {params.pathname === "/elitegames" ? null : (
                         <li className="w-full">
                           <Link
                             to="/elitegames"
@@ -322,6 +382,17 @@ function Navbar() {
                 </a>
               </li>
             )}
+            {params.pathname === "/elitegames" && (
+              <li>
+                <a
+                  href="#testimonials"
+                  className="inline-flex text-black 
+                active:text-blue-600 hover:text-blue-500 text-xs transition-all
+                duration-100 p-8 w-full">
+                  Testimonials
+                </a>
+              </li>
+            )}
             {params.pathname === "/" && (
               <li>
                 <a
@@ -336,7 +407,11 @@ function Navbar() {
               <li>
                 <NavLink
                   to="/contact"
-                  className="inline-flex text-white  border-gray-800 focus:border-pink-600 active:border-pink-600 active:text-pink-600 hover:text-pink-500 text-xs transition-all duration-100 p-8 w-full">
+                  className={`inline-flex ${
+                    params.pathname === "/elitegames"
+                      ? "text-black hover:text-blue-500"
+                      : " text-white active:text-pink-600 hover:text-pink-500"
+                  } text-white   text-xs transition-all duration-100 p-8 w-full`}>
                   Contact
                 </NavLink>
               </li>

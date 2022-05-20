@@ -37,7 +37,7 @@ function SingleVibeSlide() {
         effect={"fade"}
         spaceBetween={30}
         loop={true}
-        speed={3000}
+        speed={2000}
         pagination={{
           clickable: true,
         }}

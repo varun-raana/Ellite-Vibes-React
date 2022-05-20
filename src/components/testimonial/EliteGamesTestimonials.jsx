@@ -9,18 +9,17 @@ import "swiper/css/navigation";
 // import required modules
 import { Autoplay } from "swiper";
 
-function Testimonials() {
+function EliteGamesTestimonials() {
   const [test, setTest] = useState([]);
-  const URL =
-    "https://elite-backend-1.herokuapp.com/api/elitevibes/testimonials";
-  // const GameURL =
-  //   "https://elite-backend-1.herokuapp.com/api/elitegames/testimonials";
+
+  const GameURL =
+    "https://elite-backend-1.herokuapp.com/api/elitegames/testimonials";
 
   useEffect(() => {
     const showTestimonial = async () => {
-      const res = await fetch(URL);
+      const res = await fetch(GameURL);
       const data = await res.json();
-      const result = data.test;
+      const result = data.data;
       const tests = result.splice(0, 6);
       if (res.status === 200) {
         setTest(tests);
@@ -28,7 +27,7 @@ function Testimonials() {
     };
 
     showTestimonial();
-  });
+  }, []);
 
   return (
     <>
@@ -67,7 +66,7 @@ function Testimonials() {
                       “ {item.description}. ”
                     </p>
 
-                    <h5 className="text-xl self-start mt-4 font-bold text-pink-600 sm:text-3xl capitalize tracking-widest">
+                    <h5 className="text-xl self-start mt-4 font-bold text-blue-600 sm:text-3xl capitalize tracking-widest">
                       —{item.name}.
                     </h5>
                   </div>
@@ -86,4 +85,4 @@ function Testimonials() {
   );
 }
 
-export default Testimonials;
+export default EliteGamesTestimonials;

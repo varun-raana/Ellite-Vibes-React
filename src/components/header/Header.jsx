@@ -22,8 +22,8 @@ function Header() {
         {/* <!-- ========================= END ============================= --> */}
 
         {/* <!-- Swiper --> */}
-        <HeaderSwiper />
       </header>
+      <HeaderSwiper />
     </div>
   );
 }

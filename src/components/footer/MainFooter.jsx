@@ -35,7 +35,11 @@ function MainFooter() {
                 {params.pathname === "/elitevibes" ? null : (
                   <Link
                     to="elitevibes"
-                    className=" tracking-[2px] capitalize text-gray-400 hover:text-pink-600 transition-all md:text-base text-sm  overflow-hidden duration-700 ease-in-out py-2 px-3 font-[700] "
+                    className={` tracking-[2px] capitalize text-gray-400 ${
+                      params.pathname === "/elitegames"
+                        ? "hover:text-blue-600"
+                        : " hover:text-pink-600"
+                    } transition-all md:text-base text-sm  overflow-hidden duration-700 ease-in-out py-2 px-3 font-[700] `}
                     title="Elite Vibes">
                     elite vibes
                   </Link>
@@ -43,7 +47,11 @@ function MainFooter() {
                 {params.pathname === "/elitegames" ? null : (
                   <Link
                     to="elitegames"
-                    className=" tracking-[2px] capitalize text-gray-400 hover:text-pink-600 transition-all md:text-base text-sm  overflow-hidden duration-700 ease-in-out py-2 px-3 font-[700] "
+                    className={` tracking-[2px] capitalize text-gray-400 ${
+                      params.pathname === "/elitegames"
+                        ? "hover:text-blue-600"
+                        : " hover:text-pink-600"
+                    } transition-all md:text-base text-sm  overflow-hidden duration-700 ease-in-out py-2 px-3 font-[700] `}
                     title="Elite Games">
                     elite games
                   </Link>
@@ -51,7 +59,11 @@ function MainFooter() {
                 {params.pathname === "elitedivine" ? null : (
                   <Link
                     to="elitedivine"
-                    className=" tracking-[2px] capitalize text-gray-400 hover:text-pink-600 transition-all md:text-base text-sm  overflow-hidden duration-700 ease-in-out py-2 px-3 font-[700] "
+                    className={` tracking-[2px] capitalize text-gray-400 ${
+                      params.pathname === "/elitegames"
+                        ? "hover:text-blue-600"
+                        : " hover:text-pink-600"
+                    } transition-all md:text-base text-sm  overflow-hidden duration-700 ease-in-out py-2 px-3 font-[700] `}
                     title="Elite Divine">
                     elite divine
                   </Link>
@@ -59,7 +71,11 @@ function MainFooter() {
                 {params.pathname === "/elitegold" ? null : (
                   <Link
                     to="elitegold"
-                    className=" tracking-[2px] capitalize text-gray-400 hover:text-pink-600 transition-all md:text-base text-sm  overflow-hidden duration-700 ease-in-out py-2 px-3 font-[700] "
+                    className={` tracking-[2px] capitalize text-gray-400 ${
+                      params.pathname === "/elitegames"
+                        ? "hover:text-blue-600"
+                        : " hover:text-pink-600"
+                    } transition-all md:text-base text-sm  overflow-hidden duration-700 ease-in-out py-2 px-3 font-[700] `}
                     title="Elite Gold">
                     elite gold
                   </Link>
@@ -72,13 +88,22 @@ function MainFooter() {
               </div>
               <div className="mt-2 flex items-center justify-center w-full bg-gray-800 bg-opacity-30 overflow-hidden rounded-lg">
                 <a
-                  className="py-2 px-3 text-gray-400 font-medium hover:text-pink-700 transition-all duration-500 ease-in tracking-widest inline-flex items-center justify-center "
+                  className={`py-2 px-3 text-gray-400 font-medium ${
+                    params.pathname === "/elitegames"
+                      ? "hover:text-blue-600"
+                      : " hover:text-pink-700"
+                  } transition-all duration-500 ease-in tracking-widest inline-flex items-center justify-center `}
                   href="tel:+91-779-8824-168"
                   title="call us">
                   779-8824-168
                 </a>
+                <span className="text-white">|</span>
                 <a
-                  className="py-2 px-3 text-gray-400 font-medium hover:text-pink-700 transition-all duration-500 ease-in tracking-widest inline-flex items-center justify-center "
+                  className={`py-2 px-3 text-gray-400 font-medium ${
+                    params.pathname === "/elitegames"
+                      ? "hover:text-blue-600"
+                      : " hover:text-pink-700"
+                  } transition-all duration-500 ease-in tracking-widest inline-flex items-center justify-center `}
                   href="tel:+91-988-1497-774"
                   title="call us">
                   988-1497-774
@@ -93,7 +118,11 @@ function MainFooter() {
         <div className="text-white font-medium border-t border-gray-800 border-opacity-40 text-opacity-30 capitalize text-center p-4 tracking-widest">
           Copyright&nbsp;
           <Link
-            className="text-pink-600  tracking-wider capitalize font-semibold"
+            className={`${
+              params.pathname === "/elitegames"
+                ? " text-blue-600"
+                : "text-pink-600"
+            }  tracking-wider capitalize font-semibold`}
             to="/">
             elitevibes.in
           </Link>

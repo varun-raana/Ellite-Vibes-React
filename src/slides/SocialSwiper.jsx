@@ -62,7 +62,7 @@ function SocialSwiper() {
           // when window width is >= 640px
           640: {
             width: 640,
-            slidesPerView: 1,
+            slidesPerView: 2,
           },
           // when window width is >= 768px
           768: {
@@ -70,8 +70,8 @@ function SocialSwiper() {
             slidesPerView: 2,
           },
         }}
-        spaceBetween={50}
-        speed={5500}
+        spaceBetween={30}
+        speed={1500}
         autoplay={{
           delay: 2800,
           disableOnInteraction: true,
@@ -80,20 +80,24 @@ function SocialSwiper() {
           clickable: true,
         }}
         modules={[Autoplay]}
-        className="mySwiper w-full h-full  overflow-hidden">
+        className="mySwiper w-full h-full overflow-hidden">
         {event &&
           event.map((item, index) => {
             return (
               <SwiperSlide key={index} className=" w-full h-full">
-                <div>
-                  <img
-                    src={item.image.length > 0 ? item.image[1] : item.image[0]}
-                    alt={item.name}
-                    loading="lazy"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="flex flex-col items-start gap-2 p-3 shadow bg-white bg-opacity-10">
-                    <h2 className="text-white font-semibold uppercase tracking-widest">
+                <div className=" rounded-md">
+                  <div className="w-full">
+                    <img
+                      src={
+                        item.image.length > 0 ? item.image[1] : item.image[0]
+                      }
+                      alt={item.name}
+                      loading="lazy"
+                      className="block w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="flex flex-col items-start gap-2 p-3 shadow bg-white bg-opacity-10 backdrop-blur-sm">
+                    <h2 className="text-white text-xl mt-2 font-semibold uppercase tracking-widest">
                       {item.name}
                     </h2>
                     <p className="text-sm font-medium text-white capitalize tracking-widest">
@@ -101,8 +105,10 @@ function SocialSwiper() {
                     </p>
                     <p className="text-sm font-thin text-white capitalize tracking-widest">
                       <span className="text-sm">
-                        at {new Date(item.eventMonth).toLocaleTimeString()} on
-                        {new Date(item.eventMonth).toDateString()}
+                        on{" "}
+                        {new Date(item.eventMonth).toLocaleString("default", {
+                          dateStyle: "full",
+                        })}
                       </span>
                     </p>
                     <p className="text-sm font-thin text-white  tracking-widest">
@@ -110,9 +116,9 @@ function SocialSwiper() {
                       <Link
                         to="eliteVibes"
                         className="text-blue-500 font-semibold capitalize">
-                        upcoming section
+                        upcoming event section
                       </Link>
-                      &nbsp; in elite vibes
+                      &nbsp;
                     </p>
                   </div>
                 </div>
@@ -125,14 +131,18 @@ function SocialSwiper() {
             return (
               <SwiperSlide className="overflow-hidden" key={index}>
                 <div>
-                  <img
-                    src={item.image.length > 0 ? item.image[1] : item.image[0]}
-                    alt={item.name}
-                    loading="lazy"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="flex flex-col items-start gap-2 p-3 shadow bg-white bg-opacity-10">
-                    <h2 className="text-white font-semibold uppercase tracking-widest">
+                  <div className="w-full">
+                    <img
+                      src={
+                        item.image.length > 0 ? item.image[1] : item.image[0]
+                      }
+                      alt={item.name}
+                      loading="lazy"
+                      className="block w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="flex flex-col items-start gap-2 p-3 shadow bg-white bg-opacity-10 backdrop-blur-sm">
+                    <h2 className="text-white text-xl mt-2 font-semibold uppercase tracking-widest">
                       {item.name}
                     </h2>
                     <p className="text-sm font-medium text-white capitalize tracking-widest">
@@ -140,8 +150,10 @@ function SocialSwiper() {
                     </p>
                     <p className="text-sm font-thin text-white capitalize tracking-widest">
                       <span className="text-sm">
-                        at {new Date(item.eventMonth).toLocaleTimeString()} on
-                        {new Date(item.eventMonth).toDateString()}
+                        on{" "}
+                        {new Date(item.eventMonth).toLocaleString("default", {
+                          dateStyle: "full",
+                        })}
                       </span>
                     </p>
                     <p className="text-sm font-thin text-white  tracking-widest">
@@ -149,9 +161,9 @@ function SocialSwiper() {
                       <Link
                         to="elitegames"
                         className="text-blue-500 font-semibold capitalize">
-                        upcoming section
+                        upcoming games section
                       </Link>
-                      &nbsp; in elite games
+                      &nbsp;
                     </p>
                   </div>
                 </div>
