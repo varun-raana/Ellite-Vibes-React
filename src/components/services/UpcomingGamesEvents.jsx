@@ -41,11 +41,9 @@ function UpcomingGamesEvents() {
                       })}
                     </time>
                   </div>
-                  <article className="lg:flex items-center mt-10 md:gap-0 gap-3 w-full h-[370px]">
+                  <article className="lg:flex items-center mt-10 md:gap-0 gap-3 w-full md:h-[370px] h-full">
                     <div className="flex flex-col items-start justify-center h-full w-full md:p-5 py-5">
-                      <h2
-                        href="./gameDetails.html"
-                        className="md:text-5xl text-2xl tracking-widest text-gray-700 capitalize font-[700]">
+                      <h2 className="md:text-5xl text-2xl tracking-widest text-gray-700 capitalize font-[700]">
                         {item.name}
                       </h2>
                       <small className="text-sm font-medium capitalize tracking-[3px] text-blue-800 mt-5">

@@ -15,7 +15,9 @@ function Home() {
         <Brands />
         <Subscriber />
         <Partners />
-        <Socials />
+        <div id="socials">
+          <Socials />
+        </div>
       </div>
     </>
   );

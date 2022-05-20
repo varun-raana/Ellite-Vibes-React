@@ -218,7 +218,7 @@ function Navbar() {
                     className={`inline-flex ${
                       params.pathname === "/elitegames"
                         ? " text-black hover:text-blue-500"
-                        : "focus:bg-pink-600  focus:text-white hover:bg-pink-700"
+                        : "focus:bg-pink-600 text-white  focus:text-white hover:bg-pink-700"
                     } rounded-md text-xs transition-all duration-100 p-8 w-full`}>
                     Contact
                   </NavLink>

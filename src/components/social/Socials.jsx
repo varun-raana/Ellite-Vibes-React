@@ -3,7 +3,7 @@ import SocialSwiper from "../../slides/SocialSwiper";
 
 function Socials() {
   return (
-    <section className="events" id="socials">
+    <section className="events">
       <div className="py-24">
         <div className="heading py-12 flex flex-col items-center justify-center">
           <h2 className="text-center text-white uppercase md:text-5xl text-4xl font-semibold tracking-widest">
