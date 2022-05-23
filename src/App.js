@@ -11,6 +11,8 @@ import "./style.css";
 import NotFound from "./pages/404/NotFound";
 import Single from "./pages/eliteVibes/single/Single";
 import EliteGames from "./pages/eliteGames/EliteGames";
+// import Products from "./components/products/Products";
+import SingleProduct from "./components/products/single/SingleProduct";
 
 function App() {
   const [tops, setTop] = useState(false);
@@ -36,6 +38,16 @@ function App() {
             {/* Elite Games Route */}
             <Route path="elitegames">
               <Route index element={<EliteGames />} />
+            </Route>
+
+            {/* Elite Games Product Route */}
+            {/*  <Route path="products">
+              <Route index element={<Products />} />
+            </Route> */}
+
+            {/* Elite Games Product Route */}
+            <Route path="products/:id">
+              <Route index element={<SingleProduct />} />
             </Route>
 
             {/* About Page Route */}

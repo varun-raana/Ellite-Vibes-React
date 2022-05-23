@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 // import required modules
-import { Pagination, Autoplay } from "swiper";
+import { Autoplay } from "swiper";
 
 function Gallery() {
   const [images, setImages] = useState([]);
@@ -43,15 +43,12 @@ function Gallery() {
         slidesPerView={1}
         spaceBetween={30}
         loop={true}
-        speed={1500}
-        pagination={{
-          clickable: true,
-        }}
+        speed={1000}
         autoplay={{
           delay: 2800,
           disableOnInteraction: true,
         }}
-        modules={[Pagination, Autoplay]}
+        modules={[Autoplay]}
         className="mySwiper md:h-[550px] h-[450px] rounded-lg w-full overflow-hidden object-cover">
         {images &&
           images.map((image, index) => {

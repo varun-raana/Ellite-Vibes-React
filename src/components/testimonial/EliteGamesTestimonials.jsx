@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 // Import Swiper styles
 import "swiper/css";
@@ -7,10 +8,10 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 // import required modules
-import { Autoplay } from "swiper";
 
 function EliteGamesTestimonials() {
   const [test, setTest] = useState([]);
+  const swiperRef = useRef(null);
 
   const GameURL =
     "https://elite-backend-1.herokuapp.com/api/elitegames/testimonials";
@@ -32,6 +33,7 @@ function EliteGamesTestimonials() {
   return (
     <>
       <Swiper
+        ref={swiperRef}
         breakpoints={{
           // when window width is >= 640px
           640: {
@@ -46,14 +48,10 @@ function EliteGamesTestimonials() {
             slidesPerGroup: 1,
           },
         }}
+        loop={true}
         spaceBetween={30}
         speed={1000}
-        autoplay={{
-          delay: 4800,
-          disableOnInteraction: true,
-        }}
-        modules={[Autoplay]}
-        className="mySwiper md:h-[350px] h-full w-full object-cover overflow-hidden">
+        className="mySwiper md:h-full h-full w-full object-cover overflow-hidden">
         {test &&
           test.map((item, index) => (
             <SwiperSlide
@@ -80,6 +78,20 @@ function EliteGamesTestimonials() {
               </div>
             </SwiperSlide>
           ))}
+        <div className="flex w-full items-center justify-center gap-3 mt-8">
+          <div
+            id="previousButton"
+            className="block cursor-pointer py-2 px-3 h-full items-center justify-center border-2 rounded-sm active:scale-95 transition-all duration-300 ease-in text-white border-gray-400"
+            onClick={() => swiperRef.current.swiper.slidePrev()}>
+            <FaArrowLeft />
+          </div>
+          <div
+            id="nextButton"
+            className="block cursor-pointer py-2 px-3 h-full items-center justify-center border-2 rounded-sm active:scale-95 transition-all duration-300 ease-in text-white border-gray-400"
+            onClick={() => swiperRef.current.swiper.slideNext()}>
+            <FaArrowRight />
+          </div>
+        </div>
       </Swiper>
     </>
   );

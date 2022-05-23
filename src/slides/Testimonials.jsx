@@ -13,8 +13,6 @@ function Testimonials() {
   const [test, setTest] = useState([]);
   const URL =
     "https://elite-backend-1.herokuapp.com/api/elitevibes/testimonials";
-  // const GameURL =
-  //   "https://elite-backend-1.herokuapp.com/api/elitegames/testimonials";
 
   useEffect(() => {
     const showTestimonial = async () => {

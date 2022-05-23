@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css/navigation";
 
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -11,13 +14,11 @@ import "swiper/css/pagination";
 // import "./styles.css";
 
 // import required modules
-import { Autoplay } from "swiper";
 
 function SocialSwiper() {
   const [event, setEvent] = useState([]);
   const [gameEvent, setGameEvent] = useState([]);
-  // let headers = new Headers();
-  // headers.append("Access-Control-Allow-Origin", "*");
+  const swiperRef = useRef(null);
 
   let URL = "https://elite-backend-1.herokuapp.com/api/events";
   let game_URL = "https://elite-backend-1.herokuapp.com/api/gameEvents";
@@ -58,6 +59,7 @@ function SocialSwiper() {
   return (
     <>
       <Swiper
+        ref={swiperRef}
         breakpoints={{
           // when window width is >= 640px
           640: {
@@ -72,14 +74,6 @@ function SocialSwiper() {
         }}
         spaceBetween={30}
         speed={1500}
-        autoplay={{
-          delay: 2800,
-          disableOnInteraction: true,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Autoplay]}
         className="mySwiper w-full h-full overflow-hidden">
         {event &&
           event.map((item, index) => {
@@ -170,6 +164,20 @@ function SocialSwiper() {
               </SwiperSlide>
             );
           })}
+        <div className="flex items-center justify-center gap-3 mt-8 md:hidden">
+          <div
+            id="previousButton"
+            className="block cursor-pointer py-2 px-3 h-full items-center justify-center border-2 rounded-sm active:scale-95 transition-all duration-300 ease-in text-white border-gray-200"
+            onClick={() => swiperRef.current.swiper.slidePrev()}>
+            <FaArrowLeft />
+          </div>
+          <div
+            id="nextButton"
+            className="block cursor-pointer py-2 px-3 h-full items-center justify-center border-2 rounded-sm active:scale-95 transition-all duration-300 ease-in text-white border-gray-200"
+            onClick={() => swiperRef.current.swiper.slideNext()}>
+            <FaArrowRight />
+          </div>
+        </div>
       </Swiper>
     </>
   );

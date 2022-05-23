@@ -29,7 +29,8 @@ function UpcomingEvents() {
           return (
             <figure
               key={index}
-              className="md:flex md:flex-row flex-col max-w-4xl mx-auto rounded-md overflow-hidden figure">
+              className="md:flex md:flex-row flex-col max-w-4xl mx-auto rounded-md overflow-hidden figure"
+              title={item.name}>
               <div className="w-full h-full">
                 <img
                   className="w-full h-full object-center object-cover"

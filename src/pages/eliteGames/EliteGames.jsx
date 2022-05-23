@@ -1,10 +1,10 @@
-import React from "react";
 import EliteGamesHeader from "../../components/header/EliteGamesHeader";
 import Navbar from "../../components/navbar/Navbar";
 import EliteGamesTestimonials from "../../components/testimonial/EliteGamesTestimonials";
 import EliteGamesGallery from "../../shared/EliteGamesGallery";
 import Partners from "../../components/partners/Partners";
 import UpcomingGamesEvents from "../../components/services/UpcomingGamesEvents";
+import Products from "../../components/products/Products";
 
 function EliteGames() {
   return (
@@ -32,6 +32,17 @@ function EliteGames() {
           <div className="mt-8 md:p-4">
             <EliteGamesTestimonials />
           </div>
+        </div>
+      </div>
+      <div className="py-24">
+        <div className="flex items-center justify-center md:text-6xl text-4xl text-gray-700 text-center capitalize tracking-wider font-[600]">
+          our products
+        </div>
+        <div className="mt-4 text-sm capitalize font-[600] text-blue-600 tracking-[2px] flex items-center justify-center text-center">
+          buy special discount products from here
+        </div>
+        <div className="mt-10">
+          <Products />
         </div>
       </div>
     </>
