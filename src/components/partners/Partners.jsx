@@ -7,12 +7,12 @@ function Partners() {
   return (
     <>
       <div
-        className={`py-10 p-4 ${
+        className={`py-16 p-4 ${
           location.pathname === "/elitegames" ? "bg-white" : "partners"
         } `}>
-        <div className="max-w-7xl mx-auto md:py-10 p-5">
+        <div className="max-w-7xl mx-auto md:py-10">
           <div
-            className={`flex item-center justify-center md:text-5xl text-3xl text-center tracking-[2px] ${
+            className={`flex item-center justify-center md:text-5xl text-4xl w-full text-center tracking-[2px] ${
               location.pathname === "/elitegames"
                 ? "text-gray-600"
                 : "text-white"

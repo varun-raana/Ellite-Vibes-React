@@ -56,7 +56,7 @@ function MainFooter() {
                     elite games
                   </Link>
                 )}
-                {params.pathname === "elitedivine" ? null : (
+                {params.pathname === "/elitedivine" ? null : (
                   <Link
                     to="elitedivine"
                     className={` tracking-[2px] capitalize text-gray-400 ${

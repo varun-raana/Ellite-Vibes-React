@@ -13,6 +13,8 @@ import Single from "./pages/eliteVibes/single/Single";
 import EliteGames from "./pages/eliteGames/EliteGames";
 // import Products from "./components/products/Products";
 import SingleProduct from "./components/products/single/SingleProduct";
+import EliteDivine from "./pages/eliteDivine/EliteDivine";
+import EliteGold from "./pages/eliteGold/EliteGold";
 
 function App() {
   const [tops, setTop] = useState(false);
@@ -45,9 +47,19 @@ function App() {
               <Route index element={<Products />} />
             </Route> */}
 
-            {/* Elite Games Product Route */}
+            {/* Elite Games Single Product Page Route */}
             <Route path="products/:id">
               <Route index element={<SingleProduct />} />
+            </Route>
+
+            {/* Elite Divine Page Route */}
+            <Route path="elitedivine">
+              <Route index element={<EliteDivine />} />
+            </Route>
+
+            {/* Elite Gold Page Route */}
+            <Route path="elitegold">
+              <Route index element={<EliteGold />} />
             </Route>
 
             {/* About Page Route */}

@@ -12,6 +12,7 @@ import { useParams } from "react-router-dom";
 
 function SingleVibeSlide() {
   const { id } = useParams();
+  const [loading, setLoading] = useState(true);
 
   const URL = "https://elite-backend-1.herokuapp.com/api/events/" + id;
 
@@ -25,6 +26,10 @@ function SingleVibeSlide() {
       if (res.status === 200 && result) {
         setImages(result.image);
       }
+
+      setTimeout(() => {
+        setLoading(false);
+      }, 1600);
     };
 
     showEventImages();
@@ -32,35 +37,39 @@ function SingleVibeSlide() {
 
   return (
     <>
-      <Swiper
-        slidesPerView={1}
-        effect={"fade"}
-        spaceBetween={30}
-        loop={true}
-        speed={2000}
-        pagination={{
-          clickable: true,
-        }}
-        autoplay={{
-          delay: 2800,
-          disableOnInteraction: true,
-        }}
-        modules={[Pagination, EffectFade, Autoplay]}
-        className="mySwiper md:h-[550px] h-[250px] w-full overflow-hidden object-cover">
-        {images &&
-          images.map((item, index) => (
-            <SwiperSlide
-              className=" h-full w-full object-cover overflow-hidden"
-              key={index}>
-              <img
-                src={item}
-                className="block h-full w-full object-cover"
-                alt="event images"
-                loading="lazy"
-              />
-            </SwiperSlide>
-          ))}
-      </Swiper>
+      {loading ? (
+        <div className="mySwiper md:h-[550px] h-[250px] w-full bg-gray-900 animate-pulse overflow-hidden object-cover"></div>
+      ) : (
+        <Swiper
+          slidesPerView={1}
+          effect={"fade"}
+          spaceBetween={30}
+          loop={true}
+          speed={2000}
+          pagination={{
+            clickable: true,
+          }}
+          autoplay={{
+            delay: 2800,
+            disableOnInteraction: true,
+          }}
+          modules={[Pagination, EffectFade, Autoplay]}
+          className="mySwiper md:h-[550px] h-[250px] w-full overflow-hidden object-cover">
+          {images &&
+            images.map((item, index) => (
+              <SwiperSlide
+                className=" h-full w-full object-cover overflow-hidden"
+                key={index}>
+                <img
+                  src={item}
+                  className="block h-full w-full object-cover"
+                  alt="event images"
+                  loading="lazy"
+                />
+              </SwiperSlide>
+            ))}
+        </Swiper>
+      )}
     </>
   );
 }

@@ -11,6 +11,7 @@ import { Autoplay } from "swiper";
 
 function Gallery() {
   const [images, setImages] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const URL = "https://elite-backend-1.herokuapp.com/api/events/";
 
@@ -31,6 +32,9 @@ function Gallery() {
         });
 
         setImages(allImages);
+        setTimeout(() => {
+          setLoading(false);
+        }, 1500);
       }
     };
 
@@ -39,33 +43,37 @@ function Gallery() {
 
   return (
     <>
-      <Swiper
-        slidesPerView={1}
-        spaceBetween={30}
-        loop={true}
-        speed={1000}
-        autoplay={{
-          delay: 2800,
-          disableOnInteraction: true,
-        }}
-        modules={[Autoplay]}
-        className="mySwiper md:h-[550px] h-[450px] rounded-lg w-full overflow-hidden object-cover">
-        {images &&
-          images.map((image, index) => {
-            return (
-              <SwiperSlide
-                key={index}
-                className=" h-full w-full object-cover overflow-hidden">
-                <img
-                  src={image}
-                  className="block h-full w-full object-cover"
-                  alt="event images"
-                  loading="lazy"
-                />
-              </SwiperSlide>
-            );
-          })}
-      </Swiper>
+      {loading ? (
+        <div className="md:h-[550px] h-full rounded-lg bg-gray-800 bg-opacity-40 animate-pulse w-full overflow-hidden"></div>
+      ) : (
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={30}
+          loop={true}
+          speed={1000}
+          autoplay={{
+            delay: 2800,
+            disableOnInteraction: true,
+          }}
+          modules={[Autoplay]}
+          className="mySwiper md:h-[550px] h-[450px] rounded-lg w-full overflow-hidden object-cover">
+          {images &&
+            images.map((image, index) => {
+              return (
+                <SwiperSlide
+                  key={index}
+                  className=" h-full w-full object-cover overflow-hidden">
+                  <img
+                    src={image}
+                    className="block h-full w-full object-cover"
+                    alt="event images"
+                    loading="lazy"
+                  />
+                </SwiperSlide>
+              );
+            })}
+        </Swiper>
+      )}
     </>
   );
 }

@@ -24,7 +24,8 @@ function UpcomingEvents() {
   }, []);
   return (
     <>
-      {event && event.length > 0 ? (
+      {event &&
+        event.length > 0 &&
         event.map((item, index) => {
           return (
             <figure
@@ -68,12 +69,7 @@ function UpcomingEvents() {
               </div>
             </figure>
           );
-        })
-      ) : (
-        <>
-          <div className="">{!event && "no event yet"}</div>
-        </>
-      )}
+        })}
     </>
   );
 }
