@@ -5,6 +5,7 @@ import EliteGamesGallery from "../../shared/EliteGamesGallery";
 import Partners from "../../components/partners/Partners";
 import UpcomingGamesEvents from "../../components/services/UpcomingGamesEvents";
 import Products from "../../components/products/Products";
+import { Link } from "react-router-dom";
 
 function EliteGames() {
   return (
@@ -43,6 +44,14 @@ function EliteGames() {
         </div>
         <div className="mt-10">
           <Products />
+        </div>
+        <div className="mt-4 flex items-center justify-center text-center capitalize">
+          click here to see &nbsp;
+          <Link
+            to="/products"
+            className="inline-block text-blue-600 tracking-wider font-[500] hover:underline underline-offset-2">
+            all products
+          </Link>
         </div>
       </div>
     </>

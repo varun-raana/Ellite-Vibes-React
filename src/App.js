@@ -11,10 +11,10 @@ import "./style.css";
 import NotFound from "./pages/404/NotFound";
 import Single from "./pages/eliteVibes/single/Single";
 import EliteGames from "./pages/eliteGames/EliteGames";
-// import Products from "./components/products/Products";
 import SingleProduct from "./components/products/single/SingleProduct";
 import EliteDivine from "./pages/eliteDivine/EliteDivine";
 import EliteGold from "./pages/eliteGold/EliteGold";
+import AllProducts from "./pages/products/Products";
 
 function App() {
   const [tops, setTop] = useState(false);
@@ -31,25 +31,18 @@ function App() {
             {/* Home Route */}
             <Route index element={<Home />} />
 
-            {/* Elite Vibes Route */}
+            {/* About Page Route */}
+            <Route path="aboutUs" element={<About />} />
+
+            {/* Elite Vibes Page Route */}
             <Route path="elitevibes">
               <Route index element={<EliteVibes />} />
               <Route path=":id" element={<Single />} />
             </Route>
 
-            {/* Elite Games Route */}
+            {/* Elite Games Page Route */}
             <Route path="elitegames">
               <Route index element={<EliteGames />} />
-            </Route>
-
-            {/* Elite Games Product Route */}
-            {/*  <Route path="products">
-              <Route index element={<Products />} />
-            </Route> */}
-
-            {/* Elite Games Single Product Page Route */}
-            <Route path="products/:id">
-              <Route index element={<SingleProduct />} />
             </Route>
 
             {/* Elite Divine Page Route */}
@@ -62,8 +55,13 @@ function App() {
               <Route index element={<EliteGold />} />
             </Route>
 
-            {/* About Page Route */}
-            <Route path="aboutUs" element={<About />} />
+            {/* Elite Product Route */}
+            <Route path="products">
+              <Route index element={<AllProducts />} />
+              <Route path="/products/:id" element={<SingleProduct />} />
+            </Route>
+
+            {/* Elite Games Single Product Page Route */}
 
             {/* Contact Page Route */}
             <Route path="contact" element={<Contact />} />
