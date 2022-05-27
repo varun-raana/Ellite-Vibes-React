@@ -23,7 +23,9 @@ function AllProducts() {
       }
 
       let inStock = result.filter((items) => items.status === "in stock");
-      let outOfStock = result.filter((items) => items.status === "in stock");
+      let outOfStock = result.filter(
+        (items) => items.status === "out of stock"
+      );
       setInStock(inStock);
       setOutStock(outOfStock);
     };
@@ -33,7 +35,7 @@ function AllProducts() {
 
   return (
     <>
-      <div className="md:py-3 px-10 p-4 fixed top-18 w-full bg-white z-[200] flex items-start justify-between gap-3 border-b">
+      <div className="md:py-3 md:px-10 p-4 fixed top-18 w-full bg-white z-[200] flex items-start justify-between gap-3 border-b">
         <div className="font-medium text-blue-600 tracking-wider md:text-base text-[8px] capitalize  md:py-2 md:px-3">
           total products: &nbsp;
           <span className="font-[500]">{product.length}</span>
@@ -60,7 +62,7 @@ function AllProducts() {
           {loading ? (
             <>
               <div className="max-w-[900px] w-full mx-auto h-full ">
-                <div className="flex flex-row items-start justify-start w-full h-[250px] bg-white bg-opacity-30 gap-4">
+                <div className="flex flex-row items-start justify-start w-full h-[150px] bg-white bg-opacity-30 gap-4">
                   <div className="md:w-3/4 w-full h-full bg-gray-800 animate-pulse"></div>
                   <div className="flex flex-col items-start justify-start p-4 h-full w-full">
                     <div className="h-6 rounded w-[80px] animate-pulse bg-gray-700"></div>
@@ -71,7 +73,7 @@ function AllProducts() {
                 </div>
               </div>
               <div className="max-w-[900px] w-full mx-auto h-full">
-                <div className="flex flex-row  items-start justify-start w-full h-[250px] bg-white bg-opacity-30 gap-4">
+                <div className="flex flex-row  items-start justify-start w-full h-[150px] bg-white bg-opacity-30 gap-4">
                   <div className="md:w-3/4 w-full h-full bg-gray-800 animate-pulse"></div>
                   <div className="flex flex-col items-start justify-start p-4 h-full w-full">
                     <div className="h-6 rounded w-[80px] animate-pulse bg-gray-700"></div>
