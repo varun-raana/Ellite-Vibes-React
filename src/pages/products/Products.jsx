@@ -6,7 +6,7 @@ function Products() {
   return (
     <>
       <ProductPageHeader />
-      <div className="mt-4">
+      <div>
         <AllProducts />
       </div>
     </>
