@@ -59,7 +59,7 @@ function SocialSwiper() {
           // when window width is >= 640px
           640: {
             width: 640,
-            slidesPerView: 2,
+            slidesPerView: 1,
           },
           // when window width is >= 768px
           768: {
@@ -69,23 +69,19 @@ function SocialSwiper() {
         }}
         spaceBetween={30}
         speed={1500}
-        className="mySwiper w-full h-full overflow-hidden">
+        className=" w-full h-full overflow-hidden">
         {event &&
           event.map((item, index) => {
             return (
-              <SwiperSlide key={index} className=" w-full h-full">
-                <div className=" rounded-md">
-                  <div className="w-full">
-                    <img
-                      src={
-                        item.image.length > 0 ? item.image[1] : item.image[0]
-                      }
-                      alt={item.name}
-                      loading="lazy"
-                      className="block w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="flex flex-col items-start gap-2 p-3 shadow bg-white bg-opacity-10 backdrop-blur-sm">
+              <SwiperSlide key={index} className="w-full h-full">
+                <div className="rounded-md">
+                  <img
+                    src={item.image.length > 0 ? item.image[1] : item.image[0]}
+                    alt={item.name}
+                    loading="lazy"
+                    className="block w-full h-[250px] object-cover"
+                  />
+                  <div className="flex flex-col items-start gap-2 p-3 shadow bg-white bg-opacity-10 backdrop-blur-md">
                     <h2 className="text-white text-xl mt-2 font-semibold uppercase tracking-widest">
                       {item.name}
                     </h2>
@@ -127,10 +123,10 @@ function SocialSwiper() {
                       }
                       alt={item.name}
                       loading="lazy"
-                      className="block w-full h-full object-cover"
+                      className="block w-full h-[250px] object-cover"
                     />
                   </div>
-                  <div className="flex flex-col items-start gap-2 p-3 shadow bg-white bg-opacity-10 backdrop-blur-sm">
+                  <div className="flex flex-col items-start gap-2 p-3 shadow bg-white bg-opacity-10 backdrop-blur-md">
                     <h2 className="text-white text-xl mt-2 font-semibold uppercase tracking-widest">
                       {item.name}
                     </h2>
@@ -159,7 +155,7 @@ function SocialSwiper() {
               </SwiperSlide>
             );
           })}
-        <div className="flex items-center justify-center gap-3 mt-8 md:hidden">
+        <div className="flex items-center justify-center gap-3 mt-8 lg:hidden">
           <div
             id="previousButton"
             className="block cursor-pointer py-2 px-3 h-full items-center justify-center border-2 rounded-sm active:scale-95 transition-all duration-300 ease-in text-white border-gray-200"

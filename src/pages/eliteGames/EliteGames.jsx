@@ -42,7 +42,7 @@ function EliteGames() {
         <div className="mt-4 text-sm capitalize font-[600] text-blue-600 tracking-[2px] flex items-center justify-center text-center">
           buy special discount products from here
         </div>
-        <div className="mt-10">
+        <div className="mt-10 flex items-center justify-center  ">
           <Products />
         </div>
         <div className="mt-4 flex items-center justify-center text-center capitalize">

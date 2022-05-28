@@ -13,13 +13,9 @@ function Socials() {
             stay informed with us
           </small>
         </div>
-        <div className="max-w-6xl mx-auto lg:p-0 p-2">
+        <div className="max-w-6xl mx-auto lg:p-16 p-2">
           {/* <!-- Swiper --> */}
-          <div className="swiperEvent mySwiperEvent pb-12">
-            <div className="swiper-wrapper swiper-events">
-              <SocialSwiper />
-            </div>
-          </div>
+          <SocialSwiper />
         </div>
       </div>
     </section>

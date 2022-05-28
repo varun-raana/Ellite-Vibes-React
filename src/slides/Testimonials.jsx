@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 // import required modules
-import { Autoplay, Pagination } from "swiper";
+import { Pagination } from "swiper";
 
 function Testimonials() {
   const [test, setTest] = useState([]);
@@ -84,50 +84,42 @@ function Testimonials() {
               slidesPerGroup: 1,
             },
           }}
-          spaceBetween={30}
+          spaceBetween={10}
           speed={1000}
-          autoplay={{
-            delay: 4800,
-            disableOnInteraction: true,
-          }}
-          modules={[Autoplay, Pagination]}
-          className="mySwiper h-full w-full object-cover overflow-hidden">
+          modules={[Pagination]}
+          className=" overflow-auto h-full w-full">
           {test &&
             test.map((item, index) => (
-              <SwiperSlide
-                className="flex items-center justify-center h-full w-full object-cover"
-                key={index}>
-                <div className="swiper-slide ">
-                  <blockquote className="flex flex-col items-start justify-between h-full w-full md:p-10 p-5 backdrop-blur-xl bg-white bg-opacity-5 rounded-2xl">
-                    <div className="mt-4 flex flex-col items-start justify-start">
-                      <p className="text-base font-extralight italic text-slate-200 text-justify capitalize tracking-wider leading-7">
-                        “ {item.description}. ”
-                      </p>
-
-                      <h5 className="text-xl self-start mt-4 font-bold text-pink-600 sm:text-3xl capitalize tracking-widest">
-                        —{item.name}.
-                      </h5>
-                    </div>
-
-                    <strong className="mt-8 text-gray-300 font-medium text-sm tracking-widest">
-                      {new Date(item.createdAt).toLocaleString("default", {
-                        dateStyle: "full",
-                      })}
-                    </strong>
-                  </blockquote>
+              <SwiperSlide className="w-full h-full flex" key={index}>
+                <div className="flex flex-col backdrop-blur-md p-5 w-full bg-white bg-opacity-10 rounded h-full">
+                  <div className="mt-4">
+                    <p className="text-lg italic text-slate-100 text-justify lowercase font-extralight tracking-widest">
+                      <span className="text-2xl">“</span>&nbsp;
+                      {item.description}.&nbsp;
+                      <span className=" text-2xl">”</span>
+                    </p>
+                    <p className="text-xl  inline-block w-full mt-4 font-bold text-pink-600 sm:text-3xl capitalize tracking-widest flex-1">
+                      —{item.name}.
+                    </p>
+                  </div>
+                  <p className="mt-8  text-gray-300 inline-block font-medium text-sm tracking-widest">
+                    {new Date(item.createdAt).toLocaleString("default", {
+                      dateStyle: "full",
+                    })}
+                  </p>
                 </div>
               </SwiperSlide>
             ))}
           <div className="flex items-center justify-center gap-3 mt-8">
             <div
               id="previousButton"
-              className="block cursor-pointer py-2 px-3 h-full items-center justify-center border-2 rounded-sm active:scale-95 transition-all duration-300 ease-in text-white border-gray-200"
+              className="block cursor-pointer p-3 h-full items-center justify-center border-2 rounded-full active:scale-95 transition-all duration-300 ease-in text-white border-gray-200"
               onClick={() => swiperRef.current.swiper.slidePrev()}>
               <FaArrowLeft />
             </div>
             <div
               id="nextButton"
-              className="block cursor-pointer py-2 px-3 h-full items-center justify-center border-2 rounded-sm active:scale-95 transition-all duration-300 ease-in text-white border-gray-200"
+              className="block cursor-pointer p-3 h-full items-center justify-center border-2 rounded-full active:scale-95 transition-all duration-300 ease-in text-white border-gray-200"
               onClick={() => swiperRef.current.swiper.slideNext()}>
               <FaArrowRight />
             </div>
