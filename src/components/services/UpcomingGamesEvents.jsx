@@ -83,12 +83,12 @@ function UpcomingGamesEvents() {
                           {item.description}
                         </p>
                         <div className="flex items-center justify-center gap-4 mt-7">
-                          <a
-                            href="./gameDetails.html"
+                          <Link
+                            to={item._id}
                             className="mt-5 border py-2 inline-block px-4 outline-none justify-self-end bg-blue-700 text-white tracking-wider font-medium border-none transition-all duration-500 capitalize">
                             read more &nbsp;
                             <i className="fas fa-right-long"></i>
-                          </a>
+                          </Link>
                           <button className="mt-5 border py-2 inline-block px-4 outline-none justify-self-end text-gray-700 border-gray-700 tracking-wider font-medium hover:text-blue-600 transition-all duration-500 capitalize">
                             register
                           </button>

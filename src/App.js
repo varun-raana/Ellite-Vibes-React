@@ -15,6 +15,7 @@ import SingleProduct from "./components/products/single/SingleProduct";
 import EliteDivine from "./pages/eliteDivine/EliteDivine";
 import EliteGold from "./pages/eliteGold/EliteGold";
 import AllProducts from "./pages/products/Products";
+import SingleGameEvent from "./pages/eliteGames/single/Single";
 
 function App() {
   const [tops, setTop] = useState(false);
@@ -43,6 +44,7 @@ function App() {
             {/* Elite Games Page Route */}
             <Route path="elitegames">
               <Route index element={<EliteGames />} />
+              <Route path=":id" element={<SingleGameEvent />} />
             </Route>
 
             {/* Elite Divine Page Route */}

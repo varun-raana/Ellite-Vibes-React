@@ -29,7 +29,7 @@ function Single() {
 
   return (
     <>
-      <div className="">
+      <>
         <SingleVibeSlide />
         <div className="bg-gray-900 lg:p-5 p-3">
           {loading ? (
@@ -264,7 +264,7 @@ function Single() {
             </div>
           )}
         </div>
-      </div>
+      </>
     </>
   );
 }
