@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ProductImageSlide from "../../../slides/ProductImageSlide";
+
 function SingleProduct() {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
@@ -12,6 +13,7 @@ function SingleProduct() {
       const res = await fetch(URL);
       const data = await res.json();
       const result = data.data;
+      console.log(result);
 
       if (res.status === 200 || result) {
         setTimeout(() => {
@@ -20,6 +22,7 @@ function SingleProduct() {
         }, 1200);
       }
     };
+
     showProduct();
   });
 

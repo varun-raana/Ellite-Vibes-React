@@ -107,7 +107,7 @@ function AllProducts() {
                         />
                       </Link>
                     </div>
-                    <div className="w-full h-full p-4">
+                    <div className="w-full h-full p-4 flex flex-col items-start">
                       <div
                         className={`uppercase inline-block items-center justify-center font-[600] text-white py-1 px-2 text-[10px] rounded-full ${
                           items.status === "out of stock"
@@ -126,7 +126,7 @@ function AllProducts() {
                           {items.name}
                         </Link>
                       </strong>
-                      <p className="mt-2 tracking-wide font-medium text-base capitalize text-gray-800 ">
+                      <p className="mt-auto tracking-wide font-medium text-base capitalize text-gray-800 ">
                         {items.description}
                       </p>
                     </div>

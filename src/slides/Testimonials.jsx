@@ -70,6 +70,7 @@ function Testimonials() {
       ) : (
         <Swiper
           ref={swiperRef}
+          slidesPerView="auto"
           breakpoints={{
             // when window width is >= 640px
             640: {
@@ -90,8 +91,8 @@ function Testimonials() {
           className=" overflow-auto h-full w-full">
           {test &&
             test.map((item, index) => (
-              <SwiperSlide className="w-full h-full flex" key={index}>
-                <div className="flex flex-col backdrop-blur-md p-5 w-full bg-white bg-opacity-10 rounded h-full">
+              <SwiperSlide key={index} className="h-auto">
+                <div className="flex flex-col items-start flex-auto justify-center backdrop-blur-md p-5 w-full bg-white bg-opacity-10 rounded">
                   <div className="mt-4">
                     <p className="text-lg italic text-slate-100 text-justify lowercase font-extralight tracking-widest">
                       <span className="text-2xl">“</span>&nbsp;

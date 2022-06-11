@@ -60,14 +60,12 @@ function ProductImageSlide({ URL }) {
           {images &&
             images.map((items, index) => {
               return (
-                <SwiperSlide
-                  key={index}
-                  className="h-full w-full flex items-center justify-center overflow-hidden">
+                <SwiperSlide key={index}>
                   <img
                     onClick={handleClick}
                     src={items}
                     alt={images.name}
-                    className="h-full w-full object-cover cursor-pointer hover:opacity-90 transition-all duration-200 ease"
+                    className=" h-72 w-full object-cover cursor-pointer hover:opacity-90 transition-all duration-200 ease"
                     loading="lazy"
                   />
                 </SwiperSlide>
