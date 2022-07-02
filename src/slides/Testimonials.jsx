@@ -34,7 +34,7 @@ function Testimonials() {
     };
 
     showTestimonial();
-  });
+  }, [URL]);
 
   return (
     <>
@@ -91,8 +91,8 @@ function Testimonials() {
           className=" overflow-auto h-full w-full">
           {test &&
             test.map((item, index) => (
-              <SwiperSlide key={index} className="h-auto">
-                <div className="flex flex-col items-start flex-auto justify-center backdrop-blur-md p-5 w-full bg-white bg-opacity-10 rounded">
+              <SwiperSlide key={index} className="h-full">
+                <div className="flex flex-col flex-auto justify-center backdrop-blur-md p-5 w-full h-[300px] bg-white bg-opacity-10 rounded">
                   <div className="mt-4">
                     <p className="text-lg italic text-slate-100 text-justify lowercase font-extralight tracking-widest">
                       <span className="text-2xl">“</span>&nbsp;
@@ -103,7 +103,7 @@ function Testimonials() {
                       —{item.name}.
                     </p>
                   </div>
-                  <p className="mt-8  text-gray-300 inline-block font-medium text-sm tracking-widest">
+                  <p className="mt-auto text-gray-300 inline-block font-medium text-sm tracking-widest">
                     {new Date(item.createdAt).toLocaleString("default", {
                       dateStyle: "full",
                     })}

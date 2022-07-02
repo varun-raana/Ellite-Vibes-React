@@ -31,7 +31,7 @@ function AllProducts() {
     };
 
     showProducts();
-  }, []);
+  }, [URL]);
 
   return (
     <>

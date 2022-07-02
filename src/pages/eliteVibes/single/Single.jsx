@@ -25,7 +25,7 @@ function Single() {
     };
 
     showEvent();
-  }, [id, URL]);
+  }, [URL]);
 
   return (
     <>

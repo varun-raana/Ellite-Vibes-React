@@ -7,11 +7,13 @@ function UpcomingEvents() {
   const URL = "https://elite-backend-1.herokuapp.com/api/events";
 
   useEffect(() => {
+    console.log("object");
     const showEvents = async () => {
       const res = await fetch(URL);
       const data = await res.json();
       const result = data.data;
       const events = result.splice(0, 2);
+      console.log(events);
 
       if (res.status === 200 && events.length > 0) {
         setTimeout(() => {
@@ -21,7 +23,8 @@ function UpcomingEvents() {
     };
 
     showEvents();
-  }, []);
+  }, [URL]);
+
   return (
     <>
       {event &&

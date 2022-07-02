@@ -15,7 +15,6 @@ function Products() {
   const swiperRef = useRef(null);
   const [item, setItem] = useState([]);
   const [loading, setLoading] = useState(true);
-  const isMounted = useRef(true);
 
   useEffect(() => {
     const showItems = async () => {
@@ -26,18 +25,14 @@ function Products() {
 
       setTimeout(() => {
         if (result.length > 0 || res.status === 200) {
-          setTimeout(() => {
-            if (isMounted.current) {
-              setItem(sliceProducts);
-              setLoading(false);
-            }
-          }, 1500);
+          setItem(sliceProducts);
+          setLoading(false);
         }
       }, 1200);
     };
 
     showItems();
-  }, [isMounted, URL]);
+  }, [URL]);
 
   return (
     <>
@@ -96,7 +91,7 @@ function Products() {
                   <SwiperSlide
                     key={index}
                     className="overflow-hidden flex justify-between">
-                    <div className="flex flex-col w-full">
+                    <div className="flex flex-col w-full h-full">
                       <Link
                         to={"/products/" + items._id}
                         className="cursor-pointer ">
